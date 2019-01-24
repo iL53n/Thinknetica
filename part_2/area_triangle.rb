@@ -6,7 +6,8 @@
 
 puts "Для вычисления площади треугольника необходимо указать основание и высоту."
 print "Укажите высоту:"
-a = gets.chomp.to_i
+height = gets.chomp.to_i
 print "Укажите основание:"
-h = gets.chomp.to_i
-puts "Площадь треугольника равна: #{ 0.5 * a * h }"
+base = gets.chomp.to_i
+area = 0.5 * base * height
+puts "Площадь треугольника равна: #{area}"

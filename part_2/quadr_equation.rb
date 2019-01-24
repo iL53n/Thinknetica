@@ -27,9 +27,9 @@ print "C: "
 c = gets.to_f
 
 d = b**2 - 4 * a * c
-sqrt = Math.sqrt(d)
 
 if d > 0 
+  sqrt = Math.sqrt(d)
   x1 = (-b + sqrt) / (2.0 * a)
   x2 = (-b - sqrt) / (2.0 * a)
   puts "Дискриминат: #{d}"

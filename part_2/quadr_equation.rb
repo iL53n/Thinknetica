@@ -20,25 +20,25 @@ Math.sqrt(16)
 
 puts "Введите 3 коэффициента: "
 print "A: "
-a = gets.chomp.to_i 
+a = gets.to_f 
 print "B: "
-b = gets.chomp.to_i
+b = gets.to_f
 print "C: "
-c = gets.chomp.to_i
+c = gets.to_f
 
-d = b**2 - 4*a*c
+d = b**2 - 4 * a * c
+sqrt = Math.sqrt(d)
 
 if d > 0 
-  x1 = (-b + Math.sqrt(d))/(2*a)
-  x2 = (-b - Math.sqrt(d))/(2*a)
+  x1 = (-b + sqrt) / (2.0 * a)
+  x2 = (-b - sqrt) / (2.0 * a)
   puts "Дискриминат: #{d}"
   puts "Корень 1: #{x1}"
   puts "Корень 2: #{x2}"
 elsif d == 0
-  x1 = (-b - Math.sqrt(d))/(2*a)
+  x1 = -b / (2.0 * a)
   puts "Дискриминат: #{d}"
   puts "Т.к. дискриминант равен нулю, оба корня равны: #{x1}"
 else d < 0
   puts "Корней нет"
 end
-    

@@ -18,7 +18,7 @@ print "Укажите третью сторону: "
 c = gets.chomp.to_i
 
 # c**2(самая длинная сторона) == a**2 + b**2
-
+=begin
 if a > b && a > c
   hypotenuse = a
   cathet_2 = b
@@ -32,16 +32,15 @@ else
   cathet_2 = a
   cathet_3 = b
 end
+=end
 
+cathet_1, cathet_2, hypotenuse = [a, b, c].sort!
 
-if hypotenuse == cathet_2 && hypotenuse == cathet_3
+if hypotenuse == cathet_1 && hypotenuse == cathet_2
   puts "Треугольник равносторонний, равнобедренный, но не прямоугольный."
-elsif hypotenuse**2 == cathet_2**2 + cathet_3**2
+elsif hypotenuse**2 == cathet_1**2 + cathet_2**2
   puts "Треугольник прямоугольный."
-  puts "... еще и равнобедренный." if cathet_2 == cathet_3 || cathet_2 == hypotenuse || cathet_3 == hypotenuse
+  puts "... еще и равнобедренный." if cathet_1 == cathet_2 || cathet_1 == hypotenuse || cathet_2 == hypotenuse
 else 
   puts "Треугольник не прямоугольный"
 end
-
-
-  

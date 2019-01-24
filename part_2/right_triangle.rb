@@ -40,7 +40,7 @@ if hypotenuse == cathet_1 && hypotenuse == cathet_2
   puts "Треугольник равносторонний, равнобедренный, но не прямоугольный."
 elsif hypotenuse**2 == cathet_1**2 + cathet_2**2
   puts "Треугольник прямоугольный."
-  puts "... еще и равнобедренный." if cathet_1 == cathet_2 || cathet_1 == hypotenuse || cathet_2 == hypotenuse
+  puts "... еще и равнобедренный." if cathet_1 == cathet_2 #не нужно || cathet_1 == hypotenuse || cathet_2 == hypotenuse
 else 
   puts "Треугольник не прямоугольный"
 end

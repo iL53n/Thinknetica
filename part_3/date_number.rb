@@ -24,30 +24,32 @@ year = 0
 while true
   print "Введите число: "
   day = gets.to_i
-  break if day <= 31 && day > 0
+  break if day.between?(1, 31)
   puts "ERROR! Введено не корректное число!"
 end
 
 while true
   print "Введите месяц: "
   month = gets.to_i
-  month_pos = month - 1 #позиция указанного месяца в массиве
-  break if month <= 12 && month > 0
+  #month_pos = month - 1 #позиция указанного месяца в массиве
+  break if month.between?(1, 12)
   puts "ERROR! Введен не корректный номер месяца!"
 end
 
-while true
+loop do
   print "Введите год: "
   year = gets.to_i
   break if year > 0
   puts "ERROR! Введено не корректное значение года!"
 end
 
-months[1] = 29 if year % 4 == 0 || year % 400 == 0 
+#months[1] = 29 if year % 4 == 0 || year % 400 == 0
+leap_year = year % 4 == 0 && year % 100 != 0 || year % 400 == 0
+months[1] += 1 if leap_year
 
-date_number = 0
-months[month_pos] = day
+#date_number = 0
+#months[month_pos] = day
+#months[0..month_pos].each { |day_month| date_number += day_month }
 
-months[0..month_pos].each { |day_month| date_number += day_month }
-
+date_number = day + months.take(month - 1).reduce(0, :+)
 puts "Дата #{day}-#{month}-#{year} имеет порядоковый номер: #{date_number}"

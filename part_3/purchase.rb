@@ -9,9 +9,9 @@
 Вычислить и вывести на экран итоговую сумму всех покупок в "корзине".
 =end
 
-summ_product = 0
-summ_basket = 0
-hash_basket = Hash.new(0)
+
+total = 0
+cart = {}
 
 loop do
   print "Введите название товара(или stop для завершения покупок): "
@@ -21,12 +21,14 @@ loop do
   price = gets.to_f
   print "Количество: "
   quantity = gets.to_f
-
-  hash_basket[title] = { price => quantity }
-
-  summ_product = price * quantity
-  puts "Итого за '#{title}' (в количестве #{quantity}): #{summ_product}"
-  summ_basket += summ_product
-  puts "Итого в корзине на сумму: #{summ_basket} (наименований: #{hash_basket.size})"
-
+  cart[title] = { price: price, quantity: quantity }
 end
+
+cart.each do |title, value|
+  summ_product = value.fetch(:price) * value.fetch(:quantity) #KeyError
+  puts "Наименование: #{title} ... Количество: #{value.fetch(:quantity)} ... Сумма: #{summ_product}"
+  total += summ_product
+end
+
+puts "Итого в корзине на сумму: #{total} (наименований: #{cart.size})"
+

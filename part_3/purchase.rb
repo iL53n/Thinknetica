@@ -25,8 +25,10 @@ loop do
 end
 
 cart.each do |title, value|
-  summ_product = value.fetch(:price) * value.fetch(:quantity) #KeyError
-  puts "Наименование: #{title} ... Количество: #{value.fetch(:quantity)} ... Сумма: #{summ_product}"
+  summ_product = value[:price] * value[:quantity] 
+  #KeyError value.fetch(:price) - fetch обычно используют, когда нужно задать какое-то значение/поведение в случае отсутствия ключа.
+  #Если значение по умолчанию не требуется, оптимальнее использовать оператор []
+  puts "Наименование: #{title} ... Количество: #{value[:quantity]} ... Сумма: #{summ_product}"
   total += summ_product
 end
 

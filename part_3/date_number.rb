@@ -19,16 +19,17 @@ if year % 400 == 0 - високосный
 =end
 
 day = 0
+month = 0
 year = 0
 
-while true
+loop do
   print "Введите число: "
   day = gets.to_i
   break if day.between?(1, 31)
   puts "ERROR! Введено не корректное число!"
 end
 
-while true
+loop do
   print "Введите месяц: "
   month = gets.to_i
   #month_pos = month - 1 #позиция указанного месяца в массиве

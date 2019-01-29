@@ -20,10 +20,12 @@ class Route
   end
 
   def del_station(station)
-    @stations.delete(station) if station != @stations.first || @stations.last
+    #@stations.delete(station) if station != @stations.first && station != @stations.last
+    return if [@stations.first, @stations.last].include?(station)
+    @stations.delete(station)
   end
 
   def show_stations
-    @stations.each { |station| puts station }
+    @stations.each { |station| puts station.title }
   end
 end

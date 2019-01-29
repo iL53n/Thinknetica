@@ -24,7 +24,7 @@ class Train
     @speed = 0
   end
 
-  def up_speed(speed)
+  def speed_up(speed)
     @speed += speed
   end
 
@@ -52,7 +52,7 @@ class Train
   end
 
   def prev_station
-    route.stations[@current_station - 1] #возвращает станцию на позиции @current_station - 1
+    route.stations[@current_station - 1] if @current_station.positive? #возвращает станцию на позиции @current_station - 1
   end  
 
   def next_station
@@ -60,15 +60,16 @@ class Train
   end 
 
   def forward
+    return unless next_station
     current_station.send_train(self)
     next_station.add_train(self)
     @current_station += 1
   end
 
   def back
+    return unless prev_station
     current_station.send_train(self)
     prev_station.add_train(self)
     @current_station -= 1
   end
 end
-

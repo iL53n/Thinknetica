@@ -9,17 +9,17 @@ station3 = Station.new('Gomel')
 
 #puts "Поезда"
 train1 = Train.new(1000, 'cargo', 3)
-train1.up_speed(30)
+train1.speed_up(30)
 train1.stop
 train1.add_carriage
 train1.speed
 train1.carriages
 train2 = Train.new(1001, 'cargo', 6)
-train2.up_speed(60)
+train2.speed_up(60)
 train2.stop
 train2.remove_carriage
 train3 = Train.new(1010, 'passenger', 9)
-train3.up_speed(90)
+train3.speed_up(90)
 train3.add_carriage
 train3.remove_carriage
 

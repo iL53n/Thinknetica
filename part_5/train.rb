@@ -1,0 +1,60 @@
+class Train
+  attr_reader :speed, :carriages, :route, :number, :type, :current_station
+  
+
+  def initialize(number, type) #type = cargo || passenger
+    @number = number
+    @type = type
+    @carriages = []
+    @speed = 0
+  end
+
+  def speed_up(speed)
+    @speed += speed
+  end
+
+  def stop
+    @speed = 0
+  end
+
+  def add_carriage(carriage) #прописать добавление принадлежности в поезде
+    @carriages << carriage if speed.zero? && carriage.type == self.type
+  end
+
+  def remove_carriage(carriage)
+    return unless speed.zero? && carriage.type == self.type
+    @carriages.delete(carriage)
+  end
+
+  def set_route(route)
+    @route = route
+    @current_station = 0
+    current_station.add_train(self) #на станцию начальную[0] добавляем текущий объект
+  end
+
+  def current_station
+    route.stations[@current_station] #возвращает станцию на позиции @current_station
+  end
+
+  def prev_station
+    route.stations[@current_station - 1] if @current_station.positive? #возвращает станцию на позиции @current_station - 1
+  end  
+
+  def next_station
+    route.stations[@current_station + 1] #возвращает станцию на позиции @current_station + 1
+  end 
+
+  def forward
+    return unless next_station
+    current_station.send_train(self)
+    next_station.add_train(self)
+    @current_station += 1
+  end
+
+  def back
+    return unless prev_station
+    current_station.send_train(self)
+    prev_station.add_train(self)
+    @current_station -= 1
+  end
+end

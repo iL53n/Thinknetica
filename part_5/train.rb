@@ -17,13 +17,13 @@ class Train
     @speed = 0
   end
 
-  def add_carriage(carriage) #прописать добавление принадлежности в поезде
+  def add_carriage(carriage)
     @carriages << carriage if speed.zero? && carriage.type == self.type
   end
 
-  def remove_carriage(carriage)
-    return unless speed.zero? && carriage.type == self.type
-    @carriages.delete(carriage)
+  def remove_carriage
+    return unless speed.zero?
+    @carriages.pop
   end
 
   def set_route(route)

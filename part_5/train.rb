@@ -1,5 +1,5 @@
 class Train
-  attr_reader :speed, :carriages, :route, :number, :type, :current_station
+  attr_reader :speed, :carriages, :route, :number, :type, :current_station, :stations
   
 
   def initialize(number, type) #type = cargo || passenger
@@ -32,18 +32,6 @@ class Train
     current_station.add_train(self) #на станцию начальную[0] добавляем текущий объект
   end
 
-  def current_station
-    route.stations[@current_station] #возвращает станцию на позиции @current_station
-  end
-
-  def prev_station
-    route.stations[@current_station - 1] if @current_station.positive? #возвращает станцию на позиции @current_station - 1
-  end  
-
-  def next_station
-    route.stations[@current_station + 1] #возвращает станцию на позиции @current_station + 1
-  end 
-
   def forward
     return unless next_station
     current_station.send_train(self)
@@ -57,4 +45,17 @@ class Train
     prev_station.add_train(self)
     @current_station -= 1
   end
+
+  protected
+  def current_station
+    route.stations[@current_station] #возвращает станцию на позиции @current_station
+  end
+
+  def prev_station
+    route.stations[@current_station - 1] if @current_station.positive? #возвращает станцию на позиции @current_station - 1
+  end  
+
+  def next_station
+    route.stations[@current_station + 1] #возвращает станцию на позиции @current_station + 1
+  end 
 end

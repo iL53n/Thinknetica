@@ -18,7 +18,8 @@ class Train
   end
 
   def add_carriage(carriage)
-    @carriages << carriage if speed.zero? && carriage.type == self.type
+    return unless speed.zero? 
+    @carriages << carriage if attachable_carriage?(carriage)
   end
 
   def remove_carriage
@@ -46,10 +47,11 @@ class Train
     @current_station -= 1
   end
 
-  protected
   def current_station
     route.stations[@current_station] #возвращает станцию на позиции @current_station
   end
+
+  protected
 
   def prev_station
     route.stations[@current_station - 1] if @current_station.positive? #возвращает станцию на позиции @current_station - 1

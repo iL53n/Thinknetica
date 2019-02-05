@@ -33,8 +33,6 @@ class Railway
     @stations = []
     @trains = []
     @routes = []
-    logo
-    main_menu
     
     #тестовые объекты
     # @stations << Station.new('Minsk')
@@ -50,7 +48,21 @@ class Railway
     # train1.set_route(route1)    
   end
 
-#ГЛАВНОЕ МЕНЮ
+  def run
+    logo
+    main_menu
+  end
+
+  private
+
+  INVALID_INDEX = 'ERROR! Не верный ввод!'
+
+  def select_from_array(array)
+    index = gets.to_i
+    array[index - 1]
+  end
+  
+  #ГЛАВНОЕ МЕНЮ
   def main_menu
     loop do
       main_menu_view
@@ -64,7 +76,7 @@ class Railway
     end
   end
 
-#УПРАВЛЕНИЕ СТАНЦИЯМИ
+  #УПРАВЛЕНИЕ СТАНЦИЯМИ
   def menu_stations
     loop do
       menu_stations_view
@@ -77,7 +89,7 @@ class Railway
     end
   end
 
-#УПРАВЛЕНИЕ ПОЕЗДАМИ
+  #УПРАВЛЕНИЕ ПОЕЗДАМИ
   def menu_trains
     loop do
       menu_trains_view
@@ -95,7 +107,7 @@ class Railway
     end
   end
 
-#УПРАВЛЕНИЕ МАРШРУТАМИ
+  #УПРАВЛЕНИЕ МАРШРУТАМИ
   def menu_routes
     loop do
       menu_routes_view
@@ -111,15 +123,7 @@ class Railway
     end
   end
 
-private
-  INVALID_INDEX = 'ERROR! Не верный ввод!'
-
-  def select_from_array(array)
-    index = gets.to_i
-    array[index - 1]
-  end
-
-#СТАНЦИИ_МЕТОДЫ
+  #СТАНЦИИ_МЕТОДЫ
   def create_station
     print 'Введите название станции: '
     title = gets.chomp.capitalize
@@ -136,18 +140,21 @@ private
     end
   end
 
-#ПОЕЗДА_МЕТОДЫ
+  #ПОЕЗДА_МЕТОДЫ
   def create_train
     print 'Введите номер нового поезда:'
     number = gets.chomp  
 
     print 'Введите тип поезда(1 - для грузового, 2 - для пассажирского): '
     case gets.to_i
-    when 1 then @trains << CargoTrain.new(number)
+    when 1
+      @trains << CargoTrain.new(number)
       puts "Создан грузовой поезд № #{number}"
-    when 2 then @trains << PassengerTrain.new(number)
+    when 2
+      @trains << PassengerTrain.new(number)
       puts "Создан пассажирский поезд № #{number}"
-    else puts INVALID_INDEX 
+    else 
+      puts INVALID_INDEX 
     end
   end
 
@@ -219,7 +226,7 @@ private
     puts "Поезд перемещен назад. Текущая станция: #{train.current_station.title}"
   end
 
-#МАРШРУТЫ_МЕТОДЫ
+  #МАРШРУТЫ_МЕТОДЫ
   def create_route
     stations_list
     print "Введите индекс начальной станции: "
@@ -236,9 +243,9 @@ private
 
   def routes_list
     puts '*** Список маршрутов ***'
-    return puts 'Список маршрутов пуст!' if @routes.empty?
+    return puts ('Список маршрутов пуст!') if @routes.empty?
       @routes.each.with_index(1) do |route, index| 
-      puts "[#{index}] --> #{route.stations.map(&:title).join('-')}"
+        puts "[#{index}] --> #{route.stations.map(&:title).join('-')}"
     end
   end
 
@@ -280,7 +287,7 @@ private
     end
   end
 
-#МЕНЮ_лого, текст
+  #МЕНЮ_лого, текст
   def logo
     puts '-------------------------------------------'
     puts '╔════╦╗╔╦══╦╗─╔╦╗╔══╦╗─╔╦═══╦════╦══╦══╦══╗'

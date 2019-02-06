@@ -10,26 +10,27 @@
 #не увеличивая счетчик инстансев базового класса.
 
 module InstanceCounter
-
-  @@instances = 0
-
   def self.included(base)
     base.extend ClassMethods
     base.send :include, InstanceMethods
   end
 
   module ClassMethods
-    def self.instances
-      @@instances
+    attr_accessor :inst_count
+
+    def instances
+      @inst_count
       #озвращает кол-во экземпляров данного класса
     end
   end
 
-  private #protected 
-
   module InstanceMethods
+    
+    protected
+
     def register_instance
-      @@instances += 1
+      self.class.inst_count ||= 0 #если nil, установить 0
+      self.class.inst_count += 1
       #увеличивает счетчик кол-ва экземпляров класса и который можно вызвать из конструктора.
     end
   end

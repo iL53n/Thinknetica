@@ -7,11 +7,6 @@ class Station
 
   @@stations = []
 
-  def self.included(base)
-    base.extend ClassMethods
-    base.send :include, InstanceMethods
-  end
-
   def self.all
     @@stations
   end
@@ -20,6 +15,7 @@ class Station
     @title = title
     @trains = []
     @@stations << self
+    register_instance
   end
 
   def add_train(train)
@@ -37,5 +33,4 @@ class Station
   def send_train(train)
     @trains.delete(train)
   end
-
 end

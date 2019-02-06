@@ -25,6 +25,7 @@ class Train
     @carriages = []
     @speed = 0
     @@trains << self
+    register_instance
   end
 
   def speed_up(speed)

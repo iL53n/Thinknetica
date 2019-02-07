@@ -16,10 +16,10 @@ module InstanceCounter
   end
 
   module ClassMethods
-    attr_accessor :inst_count
+    attr_accessor :instances
 
     def instances
-      @inst_count
+      @instances
       #озвращает кол-во экземпляров данного класса
     end
   end
@@ -29,8 +29,8 @@ module InstanceCounter
     protected
 
     def register_instance
-      self.class.inst_count ||= 0 #если nil, установить 0
-      self.class.inst_count += 1
+      self.class.instances ||= 0 #если nil, установить 0
+      self.class.instances += 1
       #увеличивает счетчик кол-ва экземпляров класса и который можно вызвать из конструктора.
     end
   end

@@ -7,8 +7,10 @@ class Train
   include InstanceCounter
   include Valid
 
-  NUMBER_FORMAT = /^\w{3}\-?\w{2}$/i #Допустимый формат: три буквы или цифры в любом порядке, необязательный дефис (может быть, а может нет) и еще 2 буквы или цифры после дефиса.
+  NUMBER_FORMAT = /^[a-zа-яё\d]{3}-?[a-zа-яё\d]{2}$/i #Допустимый формат: три буквы или цифры в любом порядке, необязательный дефис (может быть, а может нет) и еще 2 буквы или цифры после дефиса.
   #TYPE_FORMAT = /(cargo|passenger)/i
+  EMPTY_NUMBER_ERROR = "Номер не может быть пустым!" 
+  NUMBER_FORMAT_ERROR = "Формат номера не соответствует! (3 буквы или цифры, опционально дефис, 2 буквы или цифры)"
 
   attr_reader :speed, :carriages, :route, :number, :type, :current_station, :stations
 
@@ -73,8 +75,8 @@ class Train
   protected
 
   def validate!
-    raise "Номер не может быть пустым!" if number.nil?
-    raise "Формат номера не соответствует! (3 буквы или цифры, опционально дефис, 2 буквы или цифры)" if number !~ NUMBER_FORMAT
+    raise EMPTY_NUMBER_ERROR if number.nil?
+    raise NUMBER_FORMAT_ERROR if number !~ NUMBER_FORMAT
     #raise "Не верный тип! Укажите cargo для грузового или passenger для пассажирского." if type !~ TYPE_FORMAT
   end
 

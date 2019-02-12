@@ -5,6 +5,9 @@ class Station
   include InstanceCounter
   include Valid
 
+  EMPTY_TITLE_ERROR = "Укажите название станции!" 
+  TITLE_FORMAT_ERROR = "Название станции не может быть меньше 3 символов!"
+
   attr_reader :title, :trains
 
   @@stations = []
@@ -26,7 +29,7 @@ class Station
   end
 
   def show_trains
-    @trains.each { |train| puts train }
+    @trains.each { |train| train }
   end
 
   def trains_by_type(type)
@@ -40,7 +43,7 @@ class Station
   protected
 
   def validate!
-    raise "Укажите название станции!" if title.nil?
-    raise "Название станции не может быть меньше 3 символов!" if title.length < 3
+    raise EMPTY_TITLE_ERROR if title.nil?
+    raise TITLE_FORMAT_ERROR if title.length < 3
   end
 end

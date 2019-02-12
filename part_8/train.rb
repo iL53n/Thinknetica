@@ -72,6 +72,10 @@ class Train
     route.stations[@current_station] #возвращает станцию на позиции @current_station
   end
 
+  def each_carriages
+    @carriages.each { |carriage| yield(carriage)}
+  end
+
   protected
 
   def validate!

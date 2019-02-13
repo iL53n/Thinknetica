@@ -13,11 +13,11 @@ Railway.new.run
 
 puts 'Пасс_вагон'
 pass_car =  PassengerCarriage.new(10)
-pass_car.take_place
+pass_car.take_capacity
 puts 'Свободно'
-puts pass_car.free_quantity
+puts pass_car.available_capacity
 puts 'Занято'
-puts pass_car.occupied_quantity
+puts pass_car.occupied_capacity
 puts pass_car.inspect
 
 puts 'Груз_вагон'

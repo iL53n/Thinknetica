@@ -45,7 +45,7 @@ class Railway
     @routes << Route.new(@stations[0], @stations[1])
     route1 = Route.new(@stations[2], @stations[3])
     @routes << route1
-    train1.set_route(route1)    
+    train1.set_route(route1)
   end
 
   def run
@@ -227,9 +227,9 @@ class Railway
       carriage.take_capacity(input)
       puts "Вами занято в вагоне № #{carriage.object_id}: #{input} м3."
     end
-    rescue RuntimeError => e
-      puts e.message
-      retry
+  rescue RuntimeError => e
+    puts e.message
+    retry
   end
 
 

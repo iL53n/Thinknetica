@@ -28,10 +28,6 @@ class Station
     @trains << train
   end
 
-  def show_trains
-    @trains.each { |train| train }
-  end
-
   def trains_by_type(type)
     @trains.select { |train| train.type == type}
   end
@@ -40,7 +36,7 @@ class Station
     @trains.delete(train)
   end
 
-  def each_trains
+  def each_train
     @trains.each { |train| yield(train) }
   end
 

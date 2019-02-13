@@ -140,7 +140,7 @@ class Railway
     return puts('Список станций пуст!') if @stations.empty?
     @stations.each.with_index(1) do |station, index|
       puts "[#{index}] --> #{station.title}:"
-      station.each_trains do |train| 
+      station.each_train do |train| 
         puts "Поезд №#{train.number}, тип '#{train.type}', кол-во вагонов: #{train.carriages.size}"
       end
     end
@@ -172,11 +172,11 @@ class Railway
     return puts 'Список поездов пуст!' if @stations.empty?
     @trains.each.with_index(1) do |train, index|
       puts "[#{index}] --> поезд № #{train.number}:"
-      train.each_carriages do |carriage|
+      train.each_carriage do |carriage|
         if carriage.is_a?(CargoCarriage)
           puts "Вагон № #{carriage.object_id}, тип '#{carriage.type}', свободно #{carriage.available_capacity}м3, занято #{carriage.occupied_capacity}м3."
         else
-          puts "Вагон № #{carriage.object_id}, тип '#{carriage.type}', свободно #{carriage.free_quantity}мест, занято #{carriage.occupied_quantity}мест."
+          puts "Вагон № #{carriage.object_id}, тип '#{carriage.type}', свободно #{carriage.available_capacity}мест, занято #{carriage.occupied_capacity}мест."
         end
       end  
     end
@@ -217,15 +217,15 @@ class Railway
     print 'Введите ИНДЕКС поезда в котором необходимо занять место или объем: '
     train = select_from_array(@trains)
     return puts(INVALID_INDEX) if train.nil?
-    carriage = train.carriages[-1] #занимаем в вагоне с конца
+    carriage = train.carriages[-1] #занимаем с конца
     if train.is_a?(PassengerTrain)
-      carriage.take_place
+      carriage.take_capacity
       puts "Место в вагоне № #{carriage.object_id} успешно занято."
     else
       print 'Введите объем, который необходимо занять: '
       input = gets.to_i
       carriage.take_capacity(input)
-      puts "Вами занятов в вагоне № #{carriage.object_id}: #{input} м3."
+      puts "Вами занято в вагоне № #{carriage.object_id}: #{input} м3."
     end
     rescue RuntimeError => e
       puts e.message

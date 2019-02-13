@@ -21,8 +21,4 @@ class Route
     return if [@stations.first, @stations.last].include?(station)
     @stations.delete(station)
   end
-
-  def show_stations
-    @stations.each { |station| station.title }
-  end
 end

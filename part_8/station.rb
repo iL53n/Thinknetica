@@ -1,12 +1,12 @@
-require_relative "./instance_counter.rb"
-require_relative "./valid.rb"
+require_relative './instance_counter.rb'
+require_relative './valid.rb'
 
 class Station
   include InstanceCounter
   include Valid
 
-  EMPTY_TITLE_ERROR = "Укажите название станции!" 
-  TITLE_FORMAT_ERROR = "Название станции не может быть меньше 3 символов!"
+  EMPTY_TITLE_ERROR = 'Укажите название станции!'
+  TITLE_FORMAT_ERROR = 'Название станции не может быть меньше 3 символов!'
 
   attr_reader :title, :trains
 

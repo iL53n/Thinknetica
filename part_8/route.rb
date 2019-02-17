@@ -1,5 +1,5 @@
-require_relative "./instance_counter.rb"
-require_relative "./valid.rb"
+require_relative './instance_counter.rb'
+require_relative './valid.rb'
 
 class Route
   include InstanceCounter

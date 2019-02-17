@@ -1,6 +1,6 @@
-require_relative "./manufacturer.rb"
-require_relative "./instance_counter.rb"
-require_relative "./valid.rb"
+require_relative './manufacturer.rb'
+require_relative './instance_counter.rb'
+require_relative './valid.rb'
 
 class Train
   include Manufacturer
@@ -9,10 +9,10 @@ class Train
 
   NUMBER_FORMAT = /^[a-zа-яё\d]{3}-?[a-zа-яё\d]{2}$/i #Допустимый формат: три буквы или цифры в любом порядке, необязательный дефис (может быть, а может нет) и еще 2 буквы или цифры после дефиса.
   #TYPE_FORMAT = /(cargo|passenger)/i
-  EMPTY_NUMBER_ERROR = "Номер не может быть пустым!" 
-  NUMBER_FORMAT_ERROR = "Формат номера не соответствует! (3 буквы или цифры, опционально дефис, 2 буквы или цифры)"
+  EMPTY_NUMBER_ERROR = 'Номер не может быть пустым!'
+  NUMBER_FORMAT_ERROR = 'Формат номера не соответствует! (3 буквы или цифры, опционально дефис, 2 буквы или цифры)'
 
-  attr_reader :speed, :carriages, :route, :number, :type, :current_station, :stations
+  attr_reader :speed, :carriages, :route, :number, :type, :current_station
 
   @@trains = {}
 

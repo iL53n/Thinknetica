@@ -18,14 +18,14 @@
 В качестве ответа приложить ссылку на репозиторий с решением
 =end
 
-require_relative "./station.rb"   
-require_relative "./route.rb"  
-require_relative "./train.rb"
-require_relative "./carriage.rb"
-require_relative "./passenger_carriage.rb" 
-require_relative "./passenger_train.rb" 
-require_relative "./cargo_carriage.rb"
-require_relative "./cargo_train.rb"
+require_relative './station.rb'
+require_relative './route.rb'
+require_relative './train.rb'
+require_relative './carriage.rb'
+require_relative './passenger_carriage.rb'
+require_relative './passenger_train.rb'
+require_relative './cargo_carriage.rb'
+require_relative './cargo_train.rb'
 
 class Railway
 
@@ -270,10 +270,10 @@ class Railway
   #МАРШРУТЫ_МЕТОДЫ
   def create_route
     stations_list
-    print "Введите индекс начальной станции: "
+    print 'Введите индекс начальной станции: '
     start_station = select_from_array(@stations)
     return puts(INVALID_INDEX) if start_station.nil?
-    print "Введите индекс конечной станции: "
+    print 'Введите индекс конечной станции: '
     finish_station = select_from_array(@stations)
     return puts(INVALID_INDEX) if finish_station.nil?
 
@@ -292,11 +292,11 @@ class Railway
 
   def add_station_to_route
     routes_list
-    print "Введите индекс маршрута, в который будет добавлена станция: "
+    print 'Введите индекс маршрута, в который будет добавлена станция: '
     route = select_from_array(@routes)
     return puts(INVALID_INDEX) if route.nil?
     stations_list
-    print "Введите индекс станции, которую необходимо добавить в маршрут: "
+    print 'Введите индекс станции, которую необходимо добавить в маршрут: '
     station = select_from_array(@stations)
     return puts(INVALID_INDEX) if station.nil?
     
@@ -311,11 +311,11 @@ class Railway
 
   def del_station_from_route
     routes_list
-    print "Введите индекс маршрута, из которого необходимо удалить станцию: "
+    print 'Введите индекс маршрута, из которого необходимо удалить станцию: '
     route = select_from_array(@routes)
     return puts(INVALID_INDEX) if route.nil?
     stations_list
-    print "Введите индекс станции, которую необходимо удалить из маршрута: "
+    print 'Введите индекс станции, которую необходимо удалить из маршрута: '
     station = select_from_array(@stations)
     return puts(INVALID_INDEX) if station.nil?
    

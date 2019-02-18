@@ -5,11 +5,7 @@ class Carriage
 
   EMPTY_CAPACITY_ERROR = 'ERROR! Укажите объем(м3 или места)!'.freeze
   NO_FREE_CAPACITY = 'ВНИМАНИЕ! Не хватает свободного объема или места!'.freeze
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 391afcfab93ccffe6a42ea9cfc11631f48955206
   attr_reader :type, :capacity
 
   def initialize(capacity, type)

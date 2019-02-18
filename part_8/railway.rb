@@ -34,18 +34,18 @@ class Railway
     @trains = []
     @routes = []
     
-    #тестовые объекты
-    @stations << Station.new('Minsk')
-    @stations << Station.new('Brest')
-    @stations << Station.new('Gomel')
-    @stations << Station.new('Grodno')
-    @trains << CargoTrain.new('100-01')
-    train1 = PassengerTrain.new('100-02')
-    @trains << train1
-    @routes << Route.new(@stations[0], @stations[1])
-    route1 = Route.new(@stations[2], @stations[3])
-    @routes << route1
-    train1.set_route(route1)
+    # тестовые объекты
+    # @stations << Station.new('Minsk')
+    # @stations << Station.new('Brest')
+    # @stations << Station.new('Gomel')
+    # @stations << Station.new('Grodno')
+    # @trains << CargoTrain.new('100-01')
+    # train1 = PassengerTrain.new('100-02')
+    # @trains << train1
+    # @routes << Route.new(@stations[0], @stations[1])
+    # route1 = Route.new(@stations[2], @stations[3])
+    # @routes << route1
+    # train1.set_route(route1)
   end
 
   def run

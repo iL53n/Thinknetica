@@ -3,8 +3,8 @@ require_relative './manufacturer.rb'
 class Carriage
   include Manufacturer
 
-  EMPTY_CAPACITY_ERROR = 'ERROR! Укажите объем(м3 или места)!'
-  NO_FREE_CAPACITY = 'ВНИМАНИЕ! Не хватает свободного объема или места!'
+  EMPTY_CAPACITY_ERROR = 'ERROR! Укажите объем(м3 или места)!'.freeze
+  NO_FREE_CAPACITY = 'ВНИМАНИЕ! Не хватает свободного объема или места!'.freeze
   
   attr_reader :type, :capacity
 

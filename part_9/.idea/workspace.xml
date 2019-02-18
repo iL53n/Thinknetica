@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d4efb1c-3c71-4a87-973e-fdebcbc612a3" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../part_8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../part_8/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carriage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/carriage.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/railway.rb" beforeDir="false" afterPath="$PROJECT_DIR$/railway.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/station.rb" beforeDir="false" afterPath="$PROJECT_DIR$/station.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.rb" beforeDir="false" afterPath="$PROJECT_DIR$/train.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,13 +44,13 @@
       <file leaf-file-name="railway.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/railway.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-470">
-              <caret line="80" column="32" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+            <state relative-caret-position="-4470">
+              <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="valid.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="valid.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/valid.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -59,8 +62,8 @@
       <file leaf-file-name="instance_counter.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/instance_counter.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="270">
+              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -68,17 +71,17 @@
       <file leaf-file-name="station.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/station.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+            <state relative-caret-position="120">
+              <caret line="8" column="81" selection-start-line="8" selection-start-column="81" selection-end-line="8" selection-end-column="81" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="train.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="train.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+            <state relative-caret-position="-540">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -161,11 +164,11 @@
         <option value="$PROJECT_DIR$/valid.rb" />
         <option value="$PROJECT_DIR$/cargo_train.rb" />
         <option value="$PROJECT_DIR$/cargo_carriage.rb" />
-        <option value="$PROJECT_DIR$/station.rb" />
         <option value="$PROJECT_DIR$/test.rb" />
         <option value="$PROJECT_DIR$/carriage.rb" />
-        <option value="$PROJECT_DIR$/train.rb" />
         <option value="$PROJECT_DIR$/railway.rb" />
+        <option value="$PROJECT_DIR$/station.rb" />
+        <option value="$PROJECT_DIR$/train.rb" />
       </list>
     </option>
   </component>
@@ -285,12 +288,12 @@
       <workItem from="1550084563863" duration="3469000" />
       <workItem from="1550088860069" duration="1743000" />
       <workItem from="1550255659454" duration="5375000" />
-      <workItem from="1550338191025" duration="4688000" />
+      <workItem from="1550338191025" duration="6495000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16028000" />
+    <option name="totallyTimeSpent" value="17835000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -603,8 +606,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/carriage.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
+        <state relative-caret-position="300">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instance_counter.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manufacturer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -622,6 +639,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/railway.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4470">
+          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/route.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -631,8 +655,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/station.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+        <state relative-caret-position="120">
+          <caret line="8" column="81" selection-start-line="8" selection-start-column="81" selection-end-line="8" selection-end-column="81" />
         </state>
       </provider>
     </entry>
@@ -643,38 +667,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/train.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/valid.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manufacturer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instance_counter.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/railway.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-470">
-          <caret line="80" column="32" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
         </state>
       </provider>
     </entry>

@@ -34,7 +34,7 @@ class Railway
 
   private
 
-  INVALID_INDEX = 'ERROR! Не верный ввод!'
+  INVALID_INDEX = 'ERROR! Не верный ввод!'.freeze
 
   def select_from_array(array)
     index = gets.to_i

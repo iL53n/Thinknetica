@@ -8,16 +8,15 @@ class Train
   include Valid
 
   # Допустимый формат: три буквы или цифры, необязательный дефис, и еще 2 буквы или цифры.
-  NUMBER_FORMAT = /^[a-zа-яё\d]{3}-?[a-zа-яё\d]{2}$/i
-  EMPTY_NUMBER_ERROR = 'Номер не может быть пустым!'
-  NUMBER_FORMAT_ERROR = 'Формат номера не соответствует! (3 буквы или цифры, опционально дефис, 2 буквы или цифры)'
+  NUMBER_FORMAT = /^[a-zа-яё\d]{3}-?[a-zа-яё\d]{2}$/i.freeze
+  EMPTY_NUMBER_ERROR = 'Номер не может быть пустым!'.freeze
+  NUMBER_FORMAT_ERROR = 'Формат номера не соответствует! (3 буквы или цифры, опционально дефис, 2 буквы или цифры)'.freeze
 
   attr_reader :speed,
               :carriages,
               :route,
               :number,
-              :type,
-              :current_station
+              :type
 
   @@trains = {}
 

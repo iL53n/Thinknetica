@@ -11,6 +11,10 @@ class Train
   NUMBER_FORMAT = /^[a-zа-яё\d]{3}-?[a-zа-яё\d]{2}$/i.freeze
   EMPTY_NUMBER_ERROR = 'Номер не может быть пустым!'.freeze
   NUMBER_FORMAT_ERROR = 'Формат номера не соответствует! (3 буквы или цифры, опционально дефис, 2 буквы или цифры)'.freeze
+<<<<<<< HEAD
+=======
+
+>>>>>>> 391afcfab93ccffe6a42ea9cfc11631f48955206
 
   attr_reader :speed,
               :carriages,

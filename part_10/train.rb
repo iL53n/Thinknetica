@@ -1,32 +1,18 @@
 require_relative './manufacturer.rb'
 require_relative './instance_counter.rb'
 require_relative './validation.rb'
-<<<<<<< HEAD
 require_relative './accessors.rb'
-=======
->>>>>>> 1e0905092aac27c087aa93f294c9e941b33ce845
 
 class Train
   include Manufacturer
   include InstanceCounter
   include Validation
-<<<<<<< HEAD
   extend Accessors
-=======
->>>>>>> 1e0905092aac27c087aa93f294c9e941b33ce845
 
   # Допустимый формат: три буквы или цифры, необязательный дефис, и еще 2 буквы или цифры.
   NUMBER_FORMAT = /^[a-zа-яё\d]{3}-?[a-zа-яё\d]{2}$/i.freeze
 
-<<<<<<< HEAD
   attr_accessors_with_history :speed, :carriages, :route, :number, :type
-=======
-  attr_reader :speed,
-              :carriages,
-              :route,
-              :number,
-              :type
->>>>>>> 1e0905092aac27c087aa93f294c9e941b33ce845
 
   validate :number, :presence
   validate :number, :format, NUMBER_FORMAT

@@ -1,12 +1,14 @@
 require_relative './manufacturer.rb'
+require_relative './accessors.rb'
 
 class Carriage
   include Manufacturer
+  extend Accessors
 
   EMPTY_CAPACITY_ERROR = 'ERROR! Укажите объем(м3 или места)!'.freeze
   NO_FREE_CAPACITY = 'ВНИМАНИЕ! Не хватает свободного объема или места!'.freeze
 
-  attr_reader :type, :capacity
+  attr_accessors_with_history :type, :capacity
 
   def initialize(capacity, type)
     @capacity = capacity

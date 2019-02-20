@@ -1,22 +1,21 @@
 require_relative './manufacturer.rb'
 require_relative './instance_counter.rb'
-require_relative './valid.rb'
+require_relative './validation.rb'
+require_relative './accessors.rb'
 
 class Train
   include Manufacturer
   include InstanceCounter
-  include Valid
+  include Validation
+  extend Accessors
 
   # Допустимый формат: три буквы или цифры, необязательный дефис, и еще 2 буквы или цифры.
   NUMBER_FORMAT = /^[a-zа-яё\d]{3}-?[a-zа-яё\d]{2}$/i.freeze
-  EMPTY_NUMBER_ERROR = 'Номер не может быть пустым!'.freeze
-  NUMBER_FORMAT_ERROR = 'Формат номера не соответствует! (3 буквы или цифры, опционально дефис, 2 буквы или цифры)'.freeze
 
-  attr_reader :speed,
-              :carriages,
-              :route,
-              :number,
-              :type
+  attr_accessors_with_history :speed, :carriages, :route, :number, :type
+
+  validate :number, :presence
+  validate :number, :format, NUMBER_FORMAT
 
   @@trains = {}
 
@@ -29,9 +28,9 @@ class Train
     @type = type
     @carriages = []
     @speed = 0
+    validate!
     @@trains[number] = self
     register_instance
-    validate!
   end
 
   def speed_up(speed)
@@ -85,11 +84,6 @@ class Train
   end
 
   protected
-
-  def validate!
-    raise EMPTY_NUMBER_ERROR if number.nil?
-    raise NUMBER_FORMAT_ERROR if number !~ NUMBER_FORMAT
-  end
 
   def prev_station
     route.stations[@current_station - 1] if @current_station.positive? # возвращает станцию на поз @current_station - 1

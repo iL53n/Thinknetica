@@ -27,7 +27,7 @@ module Accessors
     define_method(name) { instance_variable_get(variable) }
 
     define_method("#{name}=".to_sym) do |value|
-      raise ("Не верный тип для #{name}. Необходим: #{name_class}.") unless value.is_a?(name_class)
+      raise("Не верный тип для #{name}. Необходим: #{name_class}.") unless value.is_a?(name_class)
       instance_variable_set(variable, value)
     end
   end

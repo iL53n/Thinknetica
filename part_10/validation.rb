@@ -24,19 +24,19 @@ module Validation
     protected
 
     def presence(value, _)
-      raise "Значение не может быть пуcтым!" if value.nil? || value == ''
+      raise 'Значение не может быть пуcтым!' if value.nil? || value == ''
     end
 
     def format(value, format)
-      raise "Не верный формат!" if value !~ format
+      raise 'Не верный формат!' if value !~ format
     end
 
     def type(value, type)
-      raise "Не верный тип!" unless value.is_a?(type)
+      raise 'Не верный тип!' unless value.is_a?(type)
     end
 
     def length(value, _)
-      raise "Значение меньше 3 символов!" if value.length < 3 # в задании нет, но нужно для станций
+      raise 'Значение меньше 3 символов!' if value.length < 3 # в задании нет, но нужно для станций
     end
 
     def validate!
